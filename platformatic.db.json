@@ -1,0 +1,49 @@
+{
+  "$schema": "https://platformatic.dev/schemas/v0.33.0/db",
+  "server": {
+    "hostname": "{PLT_SERVER_HOSTNAME}",
+    "port": "{PORT}",
+    "logger": {
+      "level": "{PLT_SERVER_LOGGER_LEVEL}"
+    },
+    "cors": {
+      "origin": {
+        "regexp": "/*/"
+      }
+    }
+  },
+  "db": {
+    "connectionString": "{DATABASE_URL}",
+    "graphql": false,
+    "openapi": {
+      "info": {
+        "version": "1.0.0",
+        "title": "Platformatic DB Demo",
+        "description": "Exposing a Demo Postgres database as REST"
+      },
+      "prefix": "/v1",
+      "ignore": {
+        "versions": true
+      }
+    },
+    "autoTimestamp": true
+  },
+  "watch": {
+    "ignore": [
+      "*.sqlite",
+      "*.sqlite-journal"
+    ]
+  },
+  "migrations": {
+    "dir": "migrations"
+  },
+  "plugins": {
+    "paths": [
+      "plugin.ts"
+    ],
+    "typescript": "{PLT_TYPESCRIPT}"
+  },
+  "types": {
+    "autogenerate": true
+  }
+}
