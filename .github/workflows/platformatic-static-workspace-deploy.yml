@@ -28,9 +28,8 @@ jobs:
           platformatic_config_path: ./platformatic.db.json
           secrets: DATABASE_URL
         env:
+          DATABASE_URL: ${{ secrets.NEON_DB_URL_PRODUCTION }}
           PLT_SERVER_HOSTNAME: 127.0.0.1
           PORT: 3044
           PLT_SERVER_LOGGER_LEVEL: info
           PLT_TYPESCRIPT: false
-          DATABASE_URL: ${{ secrets.NEON_DB_URL_PRODUCTION }}
-
