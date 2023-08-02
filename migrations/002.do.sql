@@ -5,7 +5,7 @@ CREATE TABLE public.testimonials(
   slug text NOT NULL,
   created_at timestamp DEFAULT CURRENT_TIMESTAMP,
   updated_at timestamp,
-  CONSTRAINT testimonials_pkey PRIMARY KEY(id),
+  CONSTRAINT testimonials_pkey PRIMARY KEY(id)
 );
 
   CREATE UNIQUE INDEX testimonials_slug_idx ON public.testimonials(slug);
