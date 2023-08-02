@@ -28,3 +28,7 @@ tags
 
 # custom
 *.plt.txt
+
+# temp
+.github/workflows/platformatic-dynamic-workspace-deploy.yml
+.github/workflows/cleanup-neon-branch-db.yml
