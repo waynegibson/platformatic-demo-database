@@ -25,3 +25,6 @@ tags
 
 # clinicjs
 .clinic/
+
+# custom
+*.plt.txt
