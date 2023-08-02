@@ -1,10 +1,10 @@
 /// <reference types="@platformatic/db" />
 import { EntityHooks } from '@platformatic/sql-mapper'
-import { EntityTypes, Category,Course,CourseCategory,CourseItem } from './types'
+import { EntityTypes, Category,Course,CourseCategory,CourseItem,Testimonial } from './types'
 
 declare module 'fastify' {
   interface FastifyInstance {
-    getSchema<T extends 'Category' | 'Course' | 'CourseCategory' | 'CourseItem'>(schemaId: T): {
+    getSchema<T extends 'Category' | 'Course' | 'CourseCategory' | 'CourseItem' | 'Testimonial'>(schemaId: T): {
       '$id': string,
       title: string,
       description: string,
@@ -23,6 +23,7 @@ declare module '@platformatic/sql-mapper' {
     course: Entity<Course>,
     courseCategory: Entity<CourseCategory>,
     courseItem: Entity<CourseItem>,
+    testimonial: Entity<Testimonial>,
   }
 }
 
@@ -32,5 +33,6 @@ declare module '@platformatic/types' {
     addEntityHooks(entityName: 'course', hooks: EntityHooks<Course>): any
     addEntityHooks(entityName: 'courseCategory', hooks: EntityHooks<CourseCategory>): any
     addEntityHooks(entityName: 'courseItem', hooks: EntityHooks<CourseItem>): any
+    addEntityHooks(entityName: 'testimonial', hooks: EntityHooks<Testimonial>): any
   }
 }
